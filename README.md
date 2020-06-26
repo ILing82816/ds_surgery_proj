@@ -40,13 +40,11 @@ I tried four different models:
 ## Model performance
 The LightGBM model far outperformed the other approaches on the test and validation sets.
 * **LightGBM:** Accuracy on train sets = 86%, Accuracy on validation sets = 84%       
-![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_prophet.png "prophet")   
+![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/LightGBMwith%20CV.png)   
 * **Logistic Regression:** Accuracy on train sets and on validation sets = 74%    
-![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_linear.png "linear")  
 * **Random Forest:** Accuracy on train sets = 81%, Accuracy on validation sets = 79%   
-![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_LSTM.png "LSTM")
 * **XGBoost:** Accuracy on train sets = 87%, Accuracy on validation sets = 83%   
-![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_LSTM.png "LSTM")
+![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/XGBoost.png) 
 
-## Productionization
-In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the tutorial in the reference section above. The API endpoint takes in a request with the day of prediction and returns a list of estimated WTI Price.
+Depand on the variable importance plot, we can see the "SCHED_SURG_PROC CD" (Feature 7) is the most important variable to impact the prediction. If there are different surgery area, it have different surgery code. Depand on surgery area, the risk of surgery have different. Therefore, there are different the risk of a "long" length of stay post-surgery.
+![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/shap.PNG)  
