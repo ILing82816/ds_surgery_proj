@@ -46,5 +46,5 @@ The LightGBM model far outperformed the other approaches on the test and validat
 * **XGBoost:** Accuracy on train sets = 87%, Accuracy on validation sets = 83%   
 ![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/XGBoost.png) 
 
-Depand on the variable importance plot, we can see the "SCHED_SURG_PROC CD" (Feature 7) is the most important variable to impact the prediction. If there are different surgery area, it have different surgery code. Depand on surgery area, the risk of surgery have different. Therefore, there are different the risk of a "long" length of stay post-surgery.  
-![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/shap.PNG)  
+Depand on the variable importance plot, we can see the "SCHED_SURG_PROC CD" is the most important variable to impact the prediction. If there are different surgery area, it have different surgery code. Depand on surgery area, the risk of surgery have different. Therefore, there are different the risk of a "long" length of stay post-surgery.  
+![alt text](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/SHAP_explanation.PNG)  
