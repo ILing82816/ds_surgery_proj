@@ -25,24 +25,27 @@ I needed to clean it up so that it was usable for our model. I made the followin
 * Convert object to numeric data by one-hot encoding.
 
 ## EDA
-I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables.
-  
+I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables.  
+![](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/Female.PNG) 
+![](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/age.PNG) 
+![](https://github.com/ILing82816/ds_surgery_proj/blob/master/Figure/area_age.PNG) 
 
 ## Model Building
-First, I normalized the data. I also split the data into train and tests sets with a test size of 20%.  
-I tried three different models and evaluated them using Mean Absolute Error. I chose MAE because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.  
-I tried three different models:  
-* **Linear Regression** - Baseline for the model
-* **Long Short-term Memory (LSTM)** - Because the history of oil price would affect current oil price, I thought a memorable model like long short-term memory would be effective.
-* **Prophet** - Again, with the time series data, I thought that this would be a good fit. Also, prophet can predict not only one period but more.   
+First, I normalized the data. I also split the data into train and validation sets with a validation size of 20%.  
+I tried four different models and evaluated them using ROC curve. I chose ROC curve because it is relatively easy to interpret and check overfitting for this type of model.  
+I tried four different models:  
+* **Logistic Regression** - Baseline for the model
+* **Ensemble model (Random Forest, XGBoost, LightGBM)** - Because of the ensemble model improving weak classifiers, I thought Random Forest, XGBoost and LightGBM would be effective.   
 
 ## Model performance
-Depend on the trend of oil price in the future, investors decide the strategies of investment. Although the Linear Regression model far outperformed the other approaches on the test and validation sets, the Prophet model is more practical.
-* **Prophet:** MAE = 14.56   
+The LightGBM model far outperformed the other approaches on the test and validation sets.
+* **LightGBM:** Accuracy on train sets = 86%, Accuracy on validation sets = 84%       
 ![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_prophet.png "prophet")   
-* **Linear Regression:** MAE = 0.82  
+* **Logistic Regression:** Accuracy on train sets and on validation sets = 74%    
 ![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_linear.png "linear")  
-* **Long Short-term Memory (LSTM):** MAE = 1.08  
+* **Random Forest:** Accuracy on train sets = 81%, Accuracy on validation sets = 79%   
+![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_LSTM.png "LSTM")
+* **XGBoost:** Accuracy on train sets = 87%, Accuracy on validation sets = 83%   
 ![alt text](https://github.com/ILing82816/ds_oil_price_proj/blob/master/Figure/prediction_LSTM.png "LSTM")
 
 ## Productionization
