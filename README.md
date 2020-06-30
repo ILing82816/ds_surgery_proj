@@ -1,4 +1,4 @@
-# Data Science Length of Stay Post-surgery Prediction: Project Overview 
+# Data Science Length of Stay Post-surgery Prediction: Project Overview (with Shuo Yuan Chang, Yuke Liu)
 * Created a tool that predicting data science the lenght of stay post-surgery to identify the risk of surgery (Accuray 86%) to help doctors evaluate the risk of surgery in the future.
 * Used a real, anonymized dataset provided by UPMC regarding surgical procedures between June 2017 and June 2018.
 * Filled missing features by mode or mean value.
